@@ -6,7 +6,7 @@ BASH scripts to work with Natural Earth vectors
 Inefficient but hands-free way to clip every Natural Earth layer at the same scale by a feature of your choice. Uses OGR to clip and export to a single GPKG file.
 
 ```
-# select country
+# select clipper
 name='United States of America'
 layer=ne_10m_admin_0_countries
 proj='epsg:4326'
