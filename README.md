@@ -1,5 +1,7 @@
 # earth-basher
 
+BASH scripts to work with Natural Earth vectors
+
 ```
 #!/bin/bash
 
