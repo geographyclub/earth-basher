@@ -5,13 +5,14 @@
 
 # BASH scripts to work with Natural Earth vectors
 # 1. earth-clipper
-#    ↳ inefficient but hands-free way to clip every Natural Earth layer at the same scale by a feature of your choice. Uses OGR to clip and export to a single GPKG file.
 # 2. earth-to-svg
 # 3. earth-to-json
 
 #==================# 
 # 1. earth-clipper #
 #==================#
+
+# inefficient but hands-free way to clip every Natural Earth layer at the same scale by a feature of your choice. Uses OGR to clip and export to a single GPKG file.
 
 ### select clipper ###
 name='United States of America'
