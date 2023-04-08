@@ -1,6 +1,6 @@
 # earth-basher
 
-OGR/BASH scripts to work with Natural Earth vectors (download here: https://naciscdn.org/naturalearth/packages/natural_earth_vector.gpkg.zip)
+OGR/BASH scripts to work with Natural Earth vectors (download the data here: https://naciscdn.org/naturalearth/packages/natural_earth_vector.gpkg.zip)
 
 1. earth-clipper
 2. earth-to-svg
