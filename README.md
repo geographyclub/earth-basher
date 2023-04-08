@@ -7,7 +7,7 @@ OGR/BASH scripts to work with Natural Earth vectors.
 3. earth-to-json
 
 <img src="svg/ne_110m_admin_0_countries.svg"/>
-ne_110m_admin_0_countries.svg made with earth-to-svg
+*ne_110m_admin_0_countries.svg made with earth-to-svg*
 
 ## 1. earth-clipper
 Slow but hands-free way to clip every Natural Earth layer at the same scale by a feature of your choice and export to a single file.
