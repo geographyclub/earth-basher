@@ -31,6 +31,7 @@ done
 ```
 
 ## 2. earth-to-svg
+Convert any point, line or polygon layer to svg.
 
 ```
 #==============# 
