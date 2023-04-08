@@ -3,11 +3,11 @@
 BASH scripts to work with Natural Earth vectors.
 
 1. earth-clipper
-	Slow but hands-free way to clip every Natural Earth layer at the same scale by a feature of your choice. Uses OGR to clip and export to a single GPKG file.
 2. earth-to-svg
 3. earth-to-json
 
-1. earth-clipper
+## 1. earth-clipper
+Slow but hands-free way to clip every Natural Earth layer at the same scale by a feature of your choice. Uses OGR to clip and export to a single GPKG file.
 
 ```
 #===============# 
@@ -30,7 +30,7 @@ done
 # TO DO
 ```
 
-2. earth-to-svg
+## 2. earth-to-svg
 
 ```
 #==============# 
@@ -64,7 +64,7 @@ done
 echo '</svg>' >> ${layer}.svg
 ```
 
-3. earth-to-json
+## 3. earth-to-json
 
 ```
 #===============# 
