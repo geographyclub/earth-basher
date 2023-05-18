@@ -5,6 +5,7 @@ OGR/BASH scripts to work with Natural Earth vectors (download the data here: htt
 1. earth-clipper
 2. earth-to-svg
 3. earth-to-json
+4. earth-to-contours
 
 <img src="svg/ne_110m_admin_0_countries.svg"/>
 <sub>*ne_110m_admin_0_countries.svg made with earth-to-svg</sub>
@@ -75,5 +76,26 @@ echo '</svg>' >> ${layer}.svg
 # earth-to-json #
 #===============#
 
-# coming soon
+### select layer to convert ###
+layer=ne_110m_admin_0_countries
+
+### convert ###
+ogr2ogr -f GeoJSON ${layer}.geojson natural_earth_vector.gpkg ${layer}
+```
+
+## 4. earth-to-contours
+
+```
+#===================# 
+# earth-to-contours #
+#===================#
+
+### select clipper ###
+name='Honshu'
+layer=ne_10m_admin_0_map_subunits
+dem='topo15.grd'
+factor=1000
+
+### clip and contour ###
+gdalwarp -f 'GTiff' -s_srs 'EPSG:4326' -t_srs 'EPSG:4326' -r cubicspline -ts $(echo $(gdalinfo ${dem} | grep "Size is" | sed 's/Size is //g' | sed 's/,.*$//g')/${factor} | bc) 0 -crop_to_cutline -cutline '/home/steve/maps/naturalearth/packages/natural_earth_vector.gpkg' -csql "SELECT geom FROM ${layer} WHERE name = '${name}'" ${dem} /vsistdout/ | gdal_contour -p -amin amin -amax amax -i 100 /vsistdin/ contours_100m_${name// /_}.gpkg
 ```
