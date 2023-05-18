@@ -97,5 +97,5 @@ dem='topo15.grd'
 factor=1000
 
 ### clip and contour ###
-gdalwarp -f 'GTiff' -s_srs 'EPSG:4326' -t_srs 'EPSG:4326' -r cubicspline -ts $(echo $(gdalinfo ${dem} | grep "Size is" | sed 's/Size is //g' | sed 's/,.*$//g')/${factor} | bc) 0 -crop_to_cutline -cutline '/home/steve/maps/naturalearth/packages/natural_earth_vector.gpkg' -csql "SELECT geom FROM ${layer} WHERE name = '${name}'" ${dem} /vsistdout/ | gdal_contour -p -amin amin -amax amax -i 100 /vsistdin/ contours_100m_${name// /_}.gpkg
+gdalwarp -f 'GTiff' -s_srs 'EPSG:4326' -t_srs 'EPSG:4326' -r cubicspline -ts $(echo $(gdalinfo ${dem} | grep "Size is" | sed 's/Size is //g' | sed 's/,.*$//g')/${factor} | bc) 0 -crop_to_cutline -cutline 'natural_earth_vector.gpkg' -csql "SELECT geom FROM ${layer} WHERE name = '${name}'" ${dem} /vsistdout/ | gdal_contour -p -amin amin -amax amax -i 100 /vsistdin/ contours_100m_${name// /_}.gpkg
 ```
